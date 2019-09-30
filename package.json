@@ -1,0 +1,15 @@
+{
+  "name": "tweet-collector",
+  "version": "1.0.0",
+  "description": "A simple application to collect tweets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "expressjs": "^1.0.1",
+    "twit": "^2.2.11"
+  }
+}

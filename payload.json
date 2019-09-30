@@ -1,0 +1,16 @@
+{
+    "keys": {
+        "consumer_key" : "ePMjAyl7gKO22sjpE2T0a0sjM",
+        "consumer_secret" : "D54ABnb89peaG5I9ag68gFxrg8wPiDutg2TeXbyVr6NSpbY20z", 
+        "access_token" : "1151896274821500928-VIqadoc3FaAHgpML3T5ersSMQifkHa", 
+        "access_token_secret" : "rT32iUcI6umSYw3LCFuphjjvmzQ04Fquph7gLnuVjuGTN"
+    }, 
+    "search" : {
+        "terms" : "terms/english_list.txt",
+        "pages" : 3, 
+        "lang" : "tl",
+        "result_type" : "recent", 
+        "tweet_mode" : "extended", 
+        "offset" : 0
+    }
+}
