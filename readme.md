@@ -1,5 +1,37 @@
 # Node.js Collector Utility
 
+
+### HOW TO USE 
+1. Define your key search terms in the terms folder as a file e.g. `search_terms.txt`
+2. Configure the `payload.json` file to use your search terms
+    ```
+    {
+        "keys": {
+            "consumer_key" : "ePMjAyl7gKO22sjpE2T0a0sjM",
+            "consumer_secret" : "D54ABnb89peaG5I9ag68gFxrg8wPiDutg2TeXbyVr6NSpbY20z", 
+            "access_token" : "1151896274821500928-VIqadoc3FaAHgpML3T5ersSMQifkHa", 
+            "access_token_secret" : "rT32iUcI6umSYw3LCFuphjjvmzQ04Fquph7gLnuVjuGTN"
+        }, 
+        "search" : {
+            "terms" : "terms/search_terms.txt",
+            "pages" : 10, 
+            "lang" : "tl",
+            "result_type" : "recent", 
+            "tweet_mode" : "extended", 
+            "offset" : 0
+        }
+    }
+    ```
+
+1. Create a folder called `dropzone/`
+2. Run `node searcher.js` to search for tweets in your search terms file.
+3. Transfer the files folder in the dropzone to a folder `archives/`  
+4. The tweets in the folders of the archive folder are going to be combined by the merger program
+5. Created a folder called `datasets/` to hold the CSV datasets to be made by the merger program
+6. Use `merger.py` to create a dataset out of the different files from the archive from both `Tagalog` and `English` filtered tweets. The files in the archives folder should follow this format `[Archive Name] ([Language])` e.g. `"Key Terms (English)"`
+7. The step in #4 should create the following files. `with_duplicates.csv`, `no_duplicates.csv` and `deep_filtered.csv`. The file `no_duplicates.csv` contains tweets that don't consider the removal of usernames, hashtags and links in the filtering of tweets. The `deep_filtered.csv` file removes usernames, hashtags, links and extra whitespaces before filtering duplicates. 
+8. Use `childgen.py` to generate child search terms from `deep_filtered.csv`
+
 ## Algorithm
 ### Definitions
 1. `S` - array of search terms
@@ -22,6 +54,7 @@
 7. `s_pause(cb)` - pauses the execution for 60 seconds and then executes the callback `cb`, a wrapper function for `setTimeout()`
 8. `do_cont(R)` - checks if the searching should continue for the current item (pages) depending on the results from the last query
 
+## PSEUDOCODE
 ```bash
 let S = ["a", "b", "c"]
 let i = 0  # initial state
