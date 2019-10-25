@@ -326,26 +326,28 @@ class Searcher {
 let searcher = new Searcher("payload.json")
 
 searcher.execute(async (self) => {
-    let payload = {
-        q: "item"
-    }
+    // let payload = {
+    //     q: "item"
+    // }
 
-    let metadata = {
-        completed_in: 0.049,
-        max_id: 1178320397915213800,
-        max_id_str: '1178320397915213824',
-        next_results: '?max_id=1178320375802761215&q=item&include_entities=1',
-        query: 'item',
-        refresh_url: '?since_id=1178320397915213824&q=item&include_entities=1',
-        count: 15,
-        since_id: 0,
-        since_id_str: '0'
-    }
+    // let metadata = {
+    //     completed_in: 0.049,
+    //     max_id: 1178320397915213800,
+    //     max_id_str: '1178320397915213824',
+    //     next_results: '?max_id=1178320375802761215&q=item&include_entities=1',
+    //     query: 'item',
+    //     refresh_url: '?since_id=1178320397915213824&q=item&include_entities=1',
+    //     count: 15,
+    //     since_id: 0,
+    //     since_id_str: '0'
+    // }
     
     // console.log(await self.query(payload, true))
     // console.log(self.build_next_results_payload("item", metadata))
-    // await searcher.search_item()
 
-    await searcher.load_results_as_checkpoint("dropzone/technology.3.tl.json")
+    // search for the items specified in the payload.json file
+    await searcher.search_item()
+
+    // await searcher.load_results_as_checkpoint("dropzone/sakit.7.en.json")
 })
 

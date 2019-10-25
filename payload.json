@@ -6,8 +6,8 @@
         "access_token_secret" : "rT32iUcI6umSYw3LCFuphjjvmzQ04Fquph7gLnuVjuGTN"
     }, 
     "search" : {
-        "terms" : "terms/english_list.txt",
-        "pages" : 3, 
+        "terms" : "terms/children2.txt",
+        "pages" : 10, 
         "lang" : "tl",
         "result_type" : "recent", 
         "tweet_mode" : "extended", 
